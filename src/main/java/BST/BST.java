@@ -1,3 +1,5 @@
+package BST;
+
 import java.util.Objects;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Objects;
  *          поиск числа в дереве,
  *          определение соседей числа в дереве (предок, левый потомок, правый потомок).
  */
-class BST {
+public class BST {
     /**
      * Поле корневого узла дерева
      */
@@ -24,7 +26,7 @@ class BST {
      * Конструктор
      * @param value Значение корневого элемента
      */
-    BST(int value) {
+    public BST(int value) {
         root = new Node(value, null);
     }
 
@@ -33,7 +35,7 @@ class BST {
      * @return Корневой элемент дерева
      */
 
-    Node getRoot() {
+    public Node getRoot() {
         return root;
     }
 
@@ -43,7 +45,7 @@ class BST {
      * @return <b>true</b>, когда произошло добавление значения, <b>false</b>, когда значение не было добавлено
      */
 
-    boolean addNode(int value) {
+    public boolean addNode(int value) {
         Node curRoot = root;
 
         while (curRoot != null) {
@@ -78,7 +80,7 @@ class BST {
      * @return Узел при успешном поиске, <b>null</b>, если значение в дереве не найдено
      */
 
-    Node searchNode(int value) {
+    public Node searchNode(int value) {
         Node curRoot = root;
         while (curRoot != null && curRoot.getValue() != value) {
             if (value > curRoot.getValue())
@@ -143,7 +145,7 @@ class BST {
      * @param value Значение, которое нужно удалить из дерева
      * @return Корневой узел, <b>null</b> если узла со значением {@value} не было в дереве
      */
-    Node deleteNode(int value) {
+    public Node deleteNode(int value) {
         return deleteNode(root, value);
     }
 
@@ -152,7 +154,7 @@ class BST {
      * @param value Значение узла, для которого нужно найти соседей
      * @return Массив из соседних узлов, <b>{null, null, null}</b>, если узла со значением {@value} нет в дереве
      */
-    Node[] getNeighbours(int value) {
+    public Node[] getNeighbours(int value) {
         Node curNode = searchNode(value);
         if (curNode == null)
             return new Node[] {null, null, null};
@@ -202,7 +204,7 @@ class BST {
 
     @Override
     public String toString() {
-        return "BST:\n" +
+        return "BST.BST:\n" +
                 nodeToString(root);
     }
 

@@ -1,3 +1,5 @@
+package BST;
+
 /**
  * @author Rinefica
  * @version 1
@@ -17,7 +19,7 @@
  *          проверка одинаковых потомков у двух узлов.
  *
  */
-class Node {
+public class Node {
     /**
      * Целочисленное значение, хранимое в узле
      */
@@ -43,7 +45,7 @@ class Node {
      * @param value Значение, хранимое в узле
      * @param parent Ссылка на узел родителя
      */
-    Node(int value, Node parent) {
+    public Node(int value, Node parent) {
         this.value = value;
         this.parent = parent;
     }
@@ -53,7 +55,7 @@ class Node {
      * @return Значение узла
      */
 
-    int getValue() {
+    public int getValue() {
         return value;
     }
 
@@ -61,7 +63,7 @@ class Node {
      * Замена значения
      * @param value Новое значение узла
      */
-    void setValue(int value) {
+    public void setValue(int value) {
         this.value = value;
     }
 
@@ -69,7 +71,7 @@ class Node {
      * Получение узла-родителя
      * @return Узел-родитель
      */
-    Node getParent() {
+    public Node getParent() {
         return parent;
     }
 
@@ -77,7 +79,7 @@ class Node {
      * Замена родителя
      * @param parent Новый родитель
      */
-    void setParent(Node parent) {
+    public void setParent(Node parent) {
         this.parent = parent;
     }
 
@@ -85,7 +87,7 @@ class Node {
      * Получение левого потомка
      * @return Левый потомок узла
      */
-    Node getLeft() {
+    public Node getLeft() {
         return left;
     }
 
@@ -93,7 +95,7 @@ class Node {
      * Замена левого потомка
      * @param left Новый левый потомок узла
      */
-    void setLeft(Node left) {
+    public void setLeft(Node left) {
         this.left = left;
     }
 
@@ -101,7 +103,7 @@ class Node {
      * Получение правого потомка
      * @return Правый потомок узла
      */
-    Node getRight() {
+    public Node getRight() {
         return right;
     }
 
@@ -109,7 +111,7 @@ class Node {
      * Замена правого потомка
      * @param right Новый правый потомок
      */
-    void setRight(Node right) {
+    public void setRight(Node right) {
         this.right = right;
     }
 
@@ -117,19 +119,19 @@ class Node {
      * Является ли узел листом
      * @return <b>true</b>, если у узла нет потомков, <b>false</b>, если у узла есть хотя бы один потомок
      */
-    boolean isList() { return (left == null && right == null); }
+    public boolean isList() { return (left == null && right == null); }
 
     /**
      * Определяет, имеет ли узел только одного потомка
      * @return <b>true</b>, если у узла ровно один потомок, <b>false</b> в остальных случаях
      */
-    boolean hasOneChild() { return (left == null ^ right == null); }
+    public boolean hasOneChild() { return (left == null ^ right == null); }
 
     /**
      * Определяет, имеет ли узел обоих потомков
      * @return <b>true</b>, если у узла ровно два потомка, <b>false</b> в остальных случаях
      */
-    boolean hasTwoChildren() {
+    public boolean hasTwoChildren() {
         return (left != null && right != null);
     }
 
@@ -137,7 +139,7 @@ class Node {
      * Получение всех соседних узлов
      * @return массив узлов в порядке родитель, левый потомок, правый потомок
      */
-    Node[] getNeighbours() {
+    public Node[] getNeighbours() {
         return new Node[]{parent, left, right};
     }
 
@@ -190,7 +192,7 @@ class Node {
 
     @Override
     public String toString() {
-        StringBuilder answer = new StringBuilder("Node: " + value + "\n");
+        StringBuilder answer = new StringBuilder("BST.Node: " + value + "\n");
 
         StringBuilder[] neighbours = {
                 new StringBuilder("parent"),

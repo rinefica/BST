@@ -1,3 +1,5 @@
+import BST.BST;
+import BST.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
